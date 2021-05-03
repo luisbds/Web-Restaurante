@@ -12,11 +12,6 @@ class Prato extends Model {
       }
     );
   }
-
-  static associate(models) {
-    Prato.belongsTo(models.Dono);
-    Prato.belongsTo(models.User);
-  }
 }
 
 export default Prato;
