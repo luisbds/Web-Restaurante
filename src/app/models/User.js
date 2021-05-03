@@ -14,7 +14,7 @@ class User extends Model {
   }
 
   static associate(models) {
-   
+   User.belongsTo(models.Prato);
   }
 }
 

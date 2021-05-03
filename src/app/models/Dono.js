@@ -13,6 +13,10 @@ class Dono extends Model {
       }
     );
   }
+
+  static associate(models) {
+    Dono.hasMany(models.Prato); 
+  }
 }
 
 export default Dono;
