@@ -6,12 +6,15 @@ class Dono extends Model {
       {
         name: Sequelize.STRING,
         email: Sequelize.STRING,
-        password: Sequelize.STRING,
       },
       {
         sequelize,
       }
     );
+  }
+
+  static associate(models) {
+    Dono.hasMany(models.Prato);
   }
 }
 

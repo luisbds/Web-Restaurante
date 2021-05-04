@@ -12,6 +12,11 @@ class Prato extends Model {
       }
     );
   }
+
+  static associate(models) {
+    Prato.belongsTo(models.User, {foreignKey: 'user_id', as: 'user'});
+    Prato.belongsTo(models.Dono, {foreignKey: 'dono_id', as: 'dono'});
+  }
 }
 
 export default Prato;

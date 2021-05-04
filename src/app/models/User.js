@@ -12,6 +12,10 @@ class User extends Model {
       }
     );
   }
+
+  static associate(models) {
+    User.belongsTo(models.Prato, {foreignKey: 'prato_id', as: 'prato'});
+  }
 }
 
 export default User;

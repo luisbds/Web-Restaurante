@@ -1,7 +1,7 @@
 import * as Yup from 'yup'
-import User from '../models/User'
+import Dono from '../models/Dono'
 
-class userController{
+class donoController{
   async store(req, res) {
     //validar os campos
     const esquema = Yup.object().shape({
@@ -13,18 +13,19 @@ class userController{
 
     }
 
-    const userExists = await User.findOne({where: {email: req.body.email }})
+    const donoExists = await User.findOne({where: {email: req.body.email }})
 
-    if(userExists){
-      return res.status(400).json({mensagem: "Usuario já existe"})
+    if(donoExists){
+      return res.status(400).json({mensagem: "Dono já existe"})
     }
 
-    const { id, name, email } = await User.create(
+    const { id, name, email } = await Dono.create(
       req.body
     );
 
     return res.json({ id, name, email });
   }
+
 }
 
-export default new userController();
+  export default new donoController();
